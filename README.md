@@ -26,6 +26,7 @@ Deploying the detection model as a RPN model, discarding its following fast rcnn
 cp lib/fast_rcnn/test.rpn.py lib/fast_rcnn/test.py
 ./experiments/scripts/faster_rcnn_end2end_test_rpn.sh 0 VGG_CNN_M_1024_rpn mitos --set EXP_DIR XX
 
+# next , the data folder
 
 
 
