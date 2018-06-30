@@ -165,7 +165,7 @@ def im_detect(net, im, boxes=None):
         scores = net.blobs['cls_score'].data
     else:
         # use softmax estimated probabilities
-        scores = blobs_out['cls_prob']
+        scores = net.blobs['rpn_scores'].data.copy()
 
     if cfg.TEST.BBOX_REG:
         # Apply bounding-box regression deltas
@@ -256,11 +256,13 @@ def test_net(net, imdb, max_per_image=100, thresh=0.05, vis=False):
         im = cv2.imread(imdb.image_path_at(i))
         _t['im_detect'].tic()
         scores, boxes = im_detect(net, im, box_proposals)
+        print('scores type is {}, shape is{}\n'.format(type(scores), scores.shape)) 
+        print('boxes type is {}, shape is {}\n'.format(type(boxes), boxes.shape))
         _t['im_detect'].toc()
-
+ 
         _t['misc'].tic()
         # skip j = 0, because it's the background class
-        for j in xrange(1, imdb.num_classes):
+        for j in range(1):
             inds = np.where(scores[:, j] > thresh)[0]
             cls_scores = scores[inds, j]
             cls_boxes = boxes[inds, j*4:(j+1)*4]
@@ -270,8 +272,9 @@ def test_net(net, imdb, max_per_image=100, thresh=0.05, vis=False):
             cls_dets = cls_dets[keep, :]
             if vis:
                 vis_detections(im, imdb.classes[j], cls_dets)
-            all_boxes[j][i] = cls_dets
-
+            all_boxes[j+1][i] = cls_dets
+        all_boxes_np = np.array(all_boxes)
+        print('all_boxes shape is {}'.format(all_boxes_np.shape))
         # Limit to max_per_image detections *over all classes*
         if max_per_image > 0:
             image_scores = np.hstack([all_boxes[j][i][:, -1]

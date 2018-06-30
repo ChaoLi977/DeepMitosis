@@ -39,7 +39,7 @@ esac
 LOG="experiments/logs/faster_rcnn_end2end_${NET}_${EXTRA_ARGS_SLUG}.txt.`date +'%Y-%m-%d_%H-%M-%S'`"
 exec &> >(tee -a "$LOG")
 echo Logging output to "$LOG"
-NET_FINAL="output/M_1024_512_R45_800/mitos_2012_train_bak/vgg_cnn_m_1024_faster_rcnn_iter_120000.caffemodel"
+NET_FINAL="output/final_git/detection_12.caffemodel"
 
 time ./tools/test_net.py --gpu ${GPU_ID} \
   --def models/${PT_DIR}/${NET}/faster_rcnn_end2end/test.prototxt \

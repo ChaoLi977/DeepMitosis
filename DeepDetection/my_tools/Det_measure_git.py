@@ -9,7 +9,7 @@ def save_detection(filename,det_m):
     as the standard format: all detections in a file,
     imagename score x1 y1 x2 y2"""
     
-    fid_all= open('/home/lc/ali/py-faster-rcnn/my_tools/detection/det.txt','w')
+    fid_all= open('./detection/det.txt','w')
     num_img=len(det_m[1])
     det_res0 = [] 
     det_res1 = []
@@ -45,7 +45,7 @@ def parse_anno(filename):
         line = f.readline()
         
     f.close()
-    imagesetfile = '/home/lc/ali/py-faster-rcnn/my_tools/detection/test_git.txt'
+    imagesetfile = './detection/test_git.txt'
     with open(imagesetfile, 'r') as f:
         lines = f.readlines()
     imagenames = [x.strip() for x in lines]
@@ -64,7 +64,7 @@ if __name__=='__main__':
               'A02_v2/A02_07','A03_v2/A03_00','A03_v2/A03_01','A03_v2/A03_04', \
               'A04_v2/A04_03','A04_v2/A04_07','A04_v2/A04_09']
               
-    dir_det='/home/lc/ali/py-faster-rcnn/my_tools/original_det/'
+    dir_det='./original_det/'
     dets=os.path.join(dir_det,'detections.pkl')
     pkl_det = open(dets, 'rb')
     det_m = cPickle.load(pkl_det)
@@ -73,12 +73,12 @@ if __name__=='__main__':
 
 
     # read the gt
-    test_anno_file = '/home/lc/ali/py-faster-rcnn/my_tools/anno_test_101_git.txt'
+    test_anno_file = './anno_test_101_git.txt'
     class_recs = parse_anno(test_anno_file)    
     
     #read dets
     # load the converted detections
-    with open('/home/lc/ali/py-faster-rcnn/my_tools/detection/det.txt','r') as f:
+    with open('./detection/det.txt','r') as f:
         lines = f.readlines()
         
     splitlines = [x.strip().split() for x in lines]

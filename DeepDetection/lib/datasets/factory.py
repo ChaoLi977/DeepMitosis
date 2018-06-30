@@ -12,7 +12,6 @@ __sets = {}
 from datasets.pascal_voc import pascal_voc
 from datasets.coco import coco
 from datasets.mitos import mitos
-from datasets.mitossmall import mitossmall
 from datasets.mitos14 import mitos14
 import numpy as np
 
@@ -45,12 +44,6 @@ for year in ['2014']:
         name = 'mitos14_{}_{}'.format(year, split)
         __sets[name] = (lambda split=split, year=year: mitos14(split, year))
 
-# Set up mitossmall_2012_<split>        
-for year in ['2012']:
-    for split in ['train','test','train1']:
-        name = 'mitossmall_{}_{}'.format(year,split)
-        __sets[name] = (lambda split=split, year=year: mitossmall(split,year))		
-		
 def get_imdb(name):
     """Get an imdb (image database) by name."""
     if not __sets.has_key(name):

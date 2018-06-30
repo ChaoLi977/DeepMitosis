@@ -60,7 +60,7 @@ class mitos(imdb):
         """
         Construct an image path from the image's "index" identifier.
         """
-        image_path = os.path.join(self._data_path, 'augImg_16_notrans',
+        image_path = os.path.join(self._data_path, 'JPEGImages',
                                   index + self._image_ext)
         assert os.path.exists(image_path), \
                 'Path does not exist: {}'.format(image_path)
@@ -180,7 +180,7 @@ class mitos(imdb):
         Load image and bounding boxes info from XML file in the PASCAL VOC
         format.
         """
-        filename = os.path.join(self._data_path, 'augImg_gt_xml', index + '.xml')
+        filename = os.path.join(self._data_path, 'Annotations', index + '.xml')
         tree = ET.parse(filename)
         objs = tree.findall('object')
         if not self.config['use_diff']:
@@ -258,7 +258,7 @@ class mitos(imdb):
     def _do_python_eval(self, output_dir = 'output'):
         annopath = os.path.join(
             self._devkit_path,
-            'augImg_gt_xml',
+            'Annotations',
             '{:s}.xml')
         imagesetfile = os.path.join(
             self._data_path,
