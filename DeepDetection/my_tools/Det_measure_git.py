@@ -65,7 +65,7 @@ if __name__=='__main__':
               'A04_v2/A04_03','A04_v2/A04_07','A04_v2/A04_09']
               
     dir_det='./original_det/'
-    dets=os.path.join(dir_det,'detections.pkl')
+    dets=os.path.join(dir_det,'detections_2012.pkl')
     pkl_det = open(dets, 'rb')
     det_m = cPickle.load(pkl_det)
     print('len of detection is {}'.format(len(det_m[1])))
