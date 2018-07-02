@@ -42,8 +42,11 @@ We use a TITAN X GPU with ~12GB memory in our experiments. However, a good GPU w
 ### Installation
 
 1.Install the Caffe framework.
-2.Install the py-faster-rcnn and train the DeepDet model on 2012 MITOSIS dataset
+
+2.Install the py-faster-rcnn and train the DeepDet model on 2012 MITOSIS dataset.
+
 3.Install the FCN (fully convolutionnal networks) to train the DeepSeg model on 2012 MITOSIS dataset, and then deploy DeepSeg on 2014 MITOSIS dataset.
+
 4.Train a DeepVer model using the detection results produced by DeepDet on 2014 MITOSIS dataset.
 
 
