@@ -2,6 +2,8 @@ Our DeepDet model is based on faster-rcnn architecture.
 
 Please consult the "readme_faster_rcnn" about the details of faster-rcnn.
 
+
+### Download pre-trained ImageNet models
 We use the pre-trained VGG_CNN_M_1024 model on ImageNet. Download it and change its name:
 
 ```Shell
@@ -18,7 +20,9 @@ To train a deep detector on MITOSIS 2012 dataset:
 ```
 
 ### Test:
-The test on MITOSIS 2012 dataset. Output is written underneath `DeepDetection/output`.
+You can download the pre-computed DeepDet models using the `$DeepDetection/output/final_git/fetch_deepdetect_model` file.
+
+Run the detector on MITOSIS 2012 dataset. Output is written underneath `$DeepDetection/output`.
 
 ```Shell
 cd $DeepDetection 
