@@ -18,7 +18,7 @@ To train a deep detector on MITOSIS 2012 dataset:
 ```
 
 ### Test:
-The test on MITOSIS 2012 dataset. Output is written underneath $DeepDetection/output.
+The test on MITOSIS 2012 dataset. Output is written underneath `DeepDetection/output`.
 
 ```Shell
 cd $DeepDetection 
