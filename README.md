@@ -1,9 +1,44 @@
 # DeepMitosis: Mitosis detection via deep detection, verification and segmentation networks
-By Chao Li, Xinggang Wang, Wenyu Liu and Longin Jan Latecki
-Codes for our MIA paper "DeepMitosis: Mitosis detection via deep detection, verification and segmentation networks".
+By Chao Li, Xinggang Wang(http://www.xinggangw.info/), Wenyu Liu(http://mclab.eic.hust.edu.cn/MCWebDisplay/PersonDetails.aspx?Name=Wenyu%20Liu) and Longin Jan Latecki(https://cis.temple.edu/~latecki/)
 
+Codes for our MIA (Medical Image Analysis) paper "DeepMitosis: Mitosis detection via deep detection, verification and segmentation networks". Please see the paper(https://www.sciencedirect.com/science/article/pii/S1361841517301834) for more details.
 
-Our detection model is based on Faster R-CNN model. We use the py-faster-rcnn framework. You need to firstly install the py-faster-rcnn  following the directions at: https://github.com/rbgirshick/py-faster-rcnn.
+### Citing DeepMitosis
+
+If you find DeepMitosis useful in your research, please consider citing:
+    
+    @article{li2018deepmitosis,
+  title={DeepMitosis: Mitosis detection via deep detection, verification and segmentation networks},
+  author={Li, Chao and Wang, Xinggang and Liu, Wenyu and Latecki, Longin Jan},
+  journal={Medical image analysis},
+  volume={45},
+  pages={121--133},
+  year={2018},
+  publisher={Elsevier}
+}
+    
+### Contents
+1. [Requirements: software](#requirements-software)
+2. [Requirements: hardware](#requirements-hardware)
+3. [Basic installation](#installation-sufficient-for-the-demo)
+4. [Demo](#demo)
+5. [Beyond the demo: training and testing](#beyond-the-demo-installation-for-training-and-testing-models)
+6. [Usage](#usage)
+
+### Requirements: software
+
+All the three deep models use Caffe to train. 
+
+Our detection model is based on Faster R-CNN model. We use the py-faster-rcnn framework. You need to firstly install the py-faster-rcnn, more details see https://github.com/rbgirshick/py-faster-rcnn.
+
+Our segmentation model is based on a FCN derived from VGG-16.
+
+The deep verificaiton model is based on ResNet-50 architecture.
+
+### Requirements: software
+
+We use a TITAN X GPU with ~12GB memory in our experiments. However, a good GPU with at least 8G of memory suffices.
+
 
 To download the model pre-trained on ImageNet:
 ./data/scripts/fetch_imagenet_models.sh
