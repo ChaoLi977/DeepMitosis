@@ -1,5 +1,5 @@
 # DeepMitosis: Mitosis detection via deep detection, verification and segmentation networks
-By Chao Li, Xinggang Wang(http://www.xinggangw.info/), Wenyu Liu(http://mclab.eic.hust.edu.cn/MCWebDisplay/PersonDetails.aspx?Name=Wenyu%20Liu) and Longin Jan Latecki(https://cis.temple.edu/~latecki/)
+By Chao Li, [Xinggang Wang](http://www.xinggangw.info/), [Wenyu Liu](http://mclab.eic.hust.edu.cn/MCWebDisplay/PersonDetails.aspx?Name=Wenyu%20Liu) and [Longin Jan Latecki](https://cis.temple.edu/~latecki/)
 
 Codes for our MIA (Medical Image Analysis) paper "DeepMitosis: Mitosis detection via deep detection, verification and segmentation networks". Please see the paper(https://www.sciencedirect.com/science/article/pii/S1361841517301834) for more details.
 
@@ -7,7 +7,7 @@ Codes for our MIA (Medical Image Analysis) paper "DeepMitosis: Mitosis detection
 
 If you find DeepMitosis useful in your research, please consider citing:
     
-    @article{li2018deepmitosis,
+@article{li2018deepmitosis,
   title={DeepMitosis: Mitosis detection via deep detection, verification and segmentation networks},
   author={Li, Chao and Wang, Xinggang and Liu, Wenyu and Latecki, Longin Jan},
   journal={Medical image analysis},
