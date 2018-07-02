@@ -20,48 +20,35 @@ If you find DeepMitosis useful in your research, please consider citing:
 ### Contents
 1. [Requirements: software](#requirements-software)
 2. [Requirements: hardware](#requirements-hardware)
-3. [Basic installation](#installation-sufficient-for-the-demo)
+3. [Basic installation](#installation)
 4. [Demo](#demo)
 5. [Beyond the demo: training and testing](#beyond-the-demo-installation-for-training-and-testing-models)
 6. [Usage](#usage)
 
 ### Requirements: software
 
-All the three deep models use Caffe to train. 
+All the three deep models use Caffe framework to train. 
 
-Our detection model is based on Faster R-CNN model. We use the py-faster-rcnn framework. You need to firstly install the py-faster-rcnn, more details see https://github.com/rbgirshick/py-faster-rcnn.
+Our detection model is based on Faster R-CNN model. We use the py-faster-rcnn. You need to firstly install the py-faster-rcnn, more details see https://github.com/rbgirshick/py-faster-rcnn.
 
-Our segmentation model is based on a FCN derived from VGG-16.
+Our segmentation model is based on a FCN model derived from VGG-16.
 
 The deep verificaiton model is based on ResNet-50 architecture.
 
-### Requirements: software
+### Requirements: hardware
 
 We use a TITAN X GPU with ~12GB memory in our experiments. However, a good GPU with at least 8G of memory suffices.
 
+### Installation
 
-To download the model pre-trained on ImageNet:
-./data/scripts/fetch_imagenet_models.sh
-Rename the "VGG_CNN_M_1024.v2.caffemodel" to "VGG_CNN_M_1024_Scale.v2.caffemodel".
+1.Install the Caffe framework.
+2.Install the py-faster-rcnn and train the DeepDet model on 2012 MITOSIS dataset
+3.Install the FCN (fully convolutionnal networks) to train the DeepSeg model on 2012 MITOSIS dataset, and then deploy DeepSeg on 2014 MITOSIS dataset.
+4.Train a DeepVer model using the detection results produced by DeepDet on 2014 MITOSIS dataset.
 
 
 
-Train:
-To train a deep detector on MITOSIS 2012 dataset:
-./experiments/scripts/faster_rcnn_end2end_12.sh 0 VGG_CNN_M_1024_Scale mitos --set EXP_DIR XX
 
-Test:
-The test on MITOSIS 2012 dataset:
-./experiments/scripts/faster_rcnn_end2end_test_12.sh 0 VGG_CNN_M_1024_Scale mitos --set EXP_DIR XX
-
-The test on MITOSIS 2014 dataset:
-./experiments/scripts/faster_rcnn_end2end_test_14.sh 0 VGG_CNN_M_1024_Scale mitos14 --set EXP_DIR XX
-
-Deploying the detection model as a RPN model, discarding its following fast rcnn classification subnet.
-cp lib/fast_rcnn/test.rpn.py lib/fast_rcnn/test.py
-./experiments/scripts/faster_rcnn_end2end_test_rpn.sh 0 VGG_CNN_M_1024_rpn mitos --set EXP_DIR XX
-
-# next , the data folder
 
 
 
