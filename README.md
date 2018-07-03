@@ -6,22 +6,22 @@ Codes for our MIA (Medical Image Analysis) paper "DeepMitosis: Mitosis detection
 ### Citing DeepMitosis
 
 If you find DeepMitosis useful in your research, please consider citing:
-    
-@article{li2018deepmitosis,
-  title={DeepMitosis: Mitosis detection via deep detection, verification and segmentation networks},
-  author={Li, Chao and Wang, Xinggang and Liu, Wenyu and Latecki, Longin Jan},
-  journal={Medical image analysis},
-  volume={45},
-  pages={121--133},
-  year={2018},
-  publisher={Elsevier}
-}
+
+    @article{li2018deepmitosis,
+        title = {DeepMitosis: Mitosis detection via deep detection, verification and segmentation networks},
+        author={Li, Chao and Wang, Xinggang and Liu, Wenyu and Latecki, Longin Jan},
+        journal={Medical image analysis},
+        volume={45},
+        pages={121--133},
+        year={2018},
+        publisher={Elsevier}
+    }
     
 ### Contents
 1. [Requirements: software](#requirements-software)
 2. [Requirements: hardware](#requirements-hardware)
 3. [Basic installation](#installation)
-4. [Data preparation](#data preparation)
+4. [Data preparation](#data-preparation)
 
 ### Requirements: software
 
@@ -48,6 +48,7 @@ We use a TITAN X GPU with ~12GB memory in our experiments. However, a good GPU w
 4.Train a DeepVer model using the detection results produced by DeepDet on 2014 MITOSIS dataset.
 
 ### Data preparation
+
 Download the 2012 MITOSIS dataset and 2014 MITOSIS dataset. 
 
 For DeepDet model, the data are arranged as the VOC data in py-faster-rcnn. We transfer the mitosis' annotation to bounding box format.
