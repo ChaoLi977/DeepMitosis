@@ -523,8 +523,7 @@ layer {
   bottom: "score"
   bottom: "label"
   top: "loss"
-  loss_param {
-    ignore_label: 255
+  loss_param {    
     normalize: false
   }
 }
