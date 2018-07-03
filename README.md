@@ -21,9 +21,7 @@ If you find DeepMitosis useful in your research, please consider citing:
 1. [Requirements: software](#requirements-software)
 2. [Requirements: hardware](#requirements-hardware)
 3. [Basic installation](#installation)
-4. [Demo](#demo)
-5. [Beyond the demo: training and testing](#beyond-the-demo-installation-for-training-and-testing-models)
-6. [Usage](#usage)
+4. [Data preparation](#data preparation)
 
 ### Requirements: software
 
@@ -49,6 +47,14 @@ We use a TITAN X GPU with ~12GB memory in our experiments. However, a good GPU w
 
 4.Train a DeepVer model using the detection results produced by DeepDet on 2014 MITOSIS dataset.
 
+### Data preparation
+Download the 2012 MITOSIS dataset and 2014 MITOSIS dataset. 
+
+For DeepDet model, the data are arranged as the VOC data in py-faster-rcnn. We transfer the mitosis' annotation to bounding box format.
+
+For DeepSeg model, we convert the annotations to mask images.
+
+We perform data augmentations and image crop to produce more training samples. The data augmentation includes image rotation, mirror. Please see our paper for more details. Noted that in detection model training, we remove the image patches that contain small cross- boundary mitotic cells from the training data.
 
 
 
