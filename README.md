@@ -3,6 +3,21 @@ By Chao Li, [Xinggang Wang](http://www.xinggangw.info/), [Wenyu Liu](http://mcla
 
 Codes for our MIA (Medical Image Analysis) paper "DeepMitosis: Mitosis detection via deep detection, verification and segmentation networks". Please see the [paper](https://www.sciencedirect.com/science/article/pii/S1361841517301834) for more details.
 
+### System Overview
+
+<p align="left">
+<img src="images/system_overview.jpg" alt="System overview" width="900px">
+</p>
+
+### Results
+
+| Method | 2012 MITOSIS test| 2014 MITOSIS val set| 2014 MITOSIS test set
+|:-------|:-----:|:-------:|:-------:|
+| DeepDet | 0.832|0.489| - |
+| DeepDet+Ver |0.817| - | - | 
+| DeepDet+Seg+Ver| -|0.572 | 0.437 | 
+
+
 ### Citing DeepMitosis
 
 If you find DeepMitosis useful in your research, please consider citing:
@@ -16,6 +31,7 @@ If you find DeepMitosis useful in your research, please consider citing:
         year={2018},
         publisher={Elsevier}
     }
+   
     
 ### Contents
 1. [Requirements: software](#requirements-software)
