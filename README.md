@@ -6,7 +6,7 @@ Codes for our MIA (Medical Image Analysis) paper "DeepMitosis: Mitosis detection
 ### System Overview
 
 <p align="left">
-<img src="images/system_overview.jpg" alt="System overview" width="900px">
+<img src="images/system_overview.png" alt="System overview" width="900px">
 </p>
 
 ### Results
