@@ -47,7 +47,7 @@ Our detection model is based on Faster R-CNN model. We use the py-faster-rcnn. Y
 
 Our segmentation model is based on a FCN model derived from VGG-16.
 
-The deep verificaiton model is based on ResNet-50 architecture.
+The deep verification model is based on ResNet-50 architecture.
 
 ### Requirements: hardware
 
@@ -59,7 +59,7 @@ We use a TITAN X GPU with ~12GB memory in our experiments. However, a good GPU w
 
 2.Install the py-faster-rcnn and train the DeepDet model on 2012 MITOSIS dataset.
 
-3.Install the FCN (fully convolutionnal networks) to train the DeepSeg model on 2012 MITOSIS dataset, and then deploy DeepSeg on 2014 MITOSIS dataset.
+3.Install the FCN (fully convolutional networks) to train the DeepSeg model on 2012 MITOSIS dataset, and then deploy DeepSeg on 2014 MITOSIS dataset.
 
 4.Train a DeepVer model using the detection results produced by DeepDet on 2014 MITOSIS dataset.
 
@@ -71,7 +71,7 @@ For DeepDet model, the data are arranged as the VOC data in py-faster-rcnn. We t
 
 For DeepSeg model, we convert the annotations to mask images.
 
-We perform data augmentations and image crop to produce more training samples. The data augmentation includes image rotation, mirror. Please see our paper for more details. Noted that in detection model training, we remove the image patches that contain small cross- boundary mitotic cells from the training data.
+We perform data augmentations and image crop to produce more training samples. The data augmentation includes image rotation, mirror. Please see our paper for more details. Noted that in detection model training, we remove the image patches that contain small cross-boundary mitotic cells from the training data.
 
 
 
